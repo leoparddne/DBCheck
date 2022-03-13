@@ -1,0 +1,45 @@
+﻿<Window x:Class="OracleGenerate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OracleGenerate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="校验字段名称"/>
+                    <TextBox  Name="txtMask"  Grid.Column="1" Text="{Binding CheckFieldName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+                <!--<TextBlock Text="{Binding ResultTableList}"/>-->
+
+                <Button Content="校验数据库不存在此字段的表" Height="50" Name="btnCheck" Click="btnCheck_Click"/>
+                <Label Name="txtMsg" Foreground="Red"/>
+                
+                <TextBlock Text="单击复制" FontSize="15" Margin="5" Foreground="Red"/>
+            </StackPanel>
+            
+            <ScrollViewer VerticalScrollBarVisibility="Auto"  Margin="5">
+                <ItemsControl ItemsSource="{Binding ResultTableList}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Margin="0 2" Text="{Binding .}" Name="labelTable"  MouseDown="labelTable_MouseDown"/>
+                            </Grid>
+
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</Window>

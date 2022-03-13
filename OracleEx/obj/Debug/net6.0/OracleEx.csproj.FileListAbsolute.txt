@@ -1,0 +1,12 @@
+D:\tool\GenEntity\OracleEx\bin\Debug\net6.0\OracleEx.deps.json
+D:\tool\GenEntity\OracleEx\bin\Debug\net6.0\OracleEx.dll
+D:\tool\GenEntity\OracleEx\bin\Debug\net6.0\OracleEx.pdb
+D:\tool\GenEntity\OracleEx\obj\Debug\net6.0\OracleEx.csproj.AssemblyReference.cache
+D:\tool\GenEntity\OracleEx\obj\Debug\net6.0\OracleEx.GeneratedMSBuildEditorConfig.editorconfig
+D:\tool\GenEntity\OracleEx\obj\Debug\net6.0\OracleEx.AssemblyInfoInputs.cache
+D:\tool\GenEntity\OracleEx\obj\Debug\net6.0\OracleEx.AssemblyInfo.cs
+D:\tool\GenEntity\OracleEx\obj\Debug\net6.0\OracleEx.csproj.CoreCompileInputs.cache
+D:\tool\GenEntity\OracleEx\obj\Debug\net6.0\OracleEx.dll
+D:\tool\GenEntity\OracleEx\obj\Debug\net6.0\refint\OracleEx.dll
+D:\tool\GenEntity\OracleEx\obj\Debug\net6.0\OracleEx.pdb
+D:\tool\GenEntity\OracleEx\obj\Debug\net6.0\ref\OracleEx.dll

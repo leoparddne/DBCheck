@@ -1,0 +1,4 @@
+校验数据库所有表中不包含指定字段的表
+
+
+配置文件在DBCheck项目中的AppSetting.json中
