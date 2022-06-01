@@ -12,6 +12,7 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"/>
@@ -19,6 +20,9 @@
                     </Grid.ColumnDefinitions>
                     <Label Content="校验字段名称"/>
                     <TextBox  Name="txtMask"  Grid.Column="1" Text="{Binding CheckFieldName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="根据表名筛选" Grid.Row="1"/>
+                    <TextBox  Name="txtTableName" Grid.Row="1" Grid.Column="1" Text="{Binding CheckTableName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
                 </Grid>
                 <!--<TextBlock Text="{Binding ResultTableList}"/>-->
 

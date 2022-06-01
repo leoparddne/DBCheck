@@ -66,7 +66,21 @@ namespace OracleGenerate
         private async Task Calc()
         {
             //获取所有表
-            var tableNames = context.UserTables.Select(f => f.TableName).ToList();
+            List<string> tableNames = new();
+            if (string.IsNullOrWhiteSpace(model.CheckTableName))
+            {
+                tableNames = context.UserTables.Select(f => f.TableName).ToList();
+            }
+            else
+            {
+                tableNames = context.UserTables.Where(f => f.TableName.Contains(model.CheckTableName.ToUpper()))?.Select(f => f.TableName).ToList();
+            }
+
+            if(tableNames==null|| tableNames.Count == 0)
+            {
+                SetMsg("计算完成-未命中任何表");
+                return;
+            }
 
             //表字段
             var existTables = context.UserTabColumns.Where(f => tableNames.Contains(f.TableName) && f.ColumnName == model.CheckFieldName).Select(f => f.TableName);
@@ -82,7 +96,7 @@ namespace OracleGenerate
 
         private void labelTable_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            if(sender is TextBlock block)
+            if (sender is TextBlock block)
             {
                 try
                 {

@@ -18,5 +18,10 @@ namespace DBCheck.ViewModel
         /// 结果表列表
         /// </summary>
         public ObservableCollection<string> ResultTableList { get; set; } //= new ObservableCollection<string>() { "a", "x" };
+
+        /// <summary>
+        /// 需要筛选的结果表名称
+        /// </summary>
+        public string CheckTableName { get; set; }
     }
 }
