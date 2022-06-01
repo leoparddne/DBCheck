@@ -1300,11 +1300,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\tool\\DBCheck\\OracleEx\\OracleEx.csproj",
+      "projectUniqueName": "C:\\Users\\ives\\Desktop\\DBCheck\\OracleEx\\OracleEx.csproj",
       "projectName": "OracleEx",
-      "projectPath": "D:\\tool\\DBCheck\\OracleEx\\OracleEx.csproj",
+      "projectPath": "C:\\Users\\ives\\Desktop\\DBCheck\\OracleEx\\OracleEx.csproj",
       "packagesPath": "C:\\Users\\ives\\.nuget\\packages\\",
-      "outputPath": "D:\\tool\\DBCheck\\OracleEx\\obj\\",
+      "outputPath": "C:\\Users\\ives\\Desktop\\DBCheck\\OracleEx\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ives\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1315,7 +1315,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://192.168.2.48:8002/v3/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1354,7 +1353,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

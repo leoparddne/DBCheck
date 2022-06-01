@@ -67,6 +67,10 @@ namespace OracleGenerate
         {
             //获取所有表
             List<string> tableNames = new();
+            this.Dispatcher.Invoke(() =>
+            {
+                SetMsg("计算中...-尝试获取相关表");
+            });
             if (string.IsNullOrWhiteSpace(model.CheckTableName))
             {
                 tableNames = context.UserTables.Select(f => f.TableName).ToList();
@@ -78,14 +82,25 @@ namespace OracleGenerate
 
             if(tableNames==null|| tableNames.Count == 0)
             {
-                SetMsg("计算完成-未命中任何表");
+                this.Dispatcher.Invoke(() =>
+                {
+                    SetMsg("计算完成-未命中任何表");
+                });
                 return;
             }
+            this.Dispatcher.Invoke(() =>
+            {
+                SetMsg("计算中...-成功获取相关表");
+            });
+
 
             //表字段
             var existTables = context.UserTabColumns.Where(f => tableNames.Contains(f.TableName) && f.ColumnName == model.CheckFieldName).Select(f => f.TableName);
 
-            model.ResultTableList = new ObservableCollection<string>(existTables);
+            this.Dispatcher.Invoke(() =>
+            {
+                model.ResultTableList = new ObservableCollection<string>(existTables);
+            });
 
 
             this.Dispatcher.Invoke(() =>
@@ -101,7 +116,7 @@ namespace OracleGenerate
                 try
                 {
                     Clipboard.SetText(block.Text);
-                    SetMsg("复制成功");
+                    SetMsg($"复制成功-{block.Text}");
 
                 }
                 catch (System.Exception)

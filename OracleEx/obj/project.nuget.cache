@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "anGatzrPfAIBRJsHdbteQNjnkg9DgX4Zvyg71daLZ9/lAQgtyw4aVkuI2VWDRQLvYmeFr8aycmno9HmLm5uRCg==",
+  "dgSpecHash": "jycT4Of9aMnvRLn4jK1W17tAoNV00Cyp1Qj9TDpDk0MC8kD6IOVHiRMxEZaIUfwuZ+VCgiHnCiezKKGxxpxmuA==",
   "success": true,
-  "projectFilePath": "D:\\tool\\DBCheck\\OracleEx\\OracleEx.csproj",
+  "projectFilePath": "C:\\Users\\ives\\Desktop\\DBCheck\\OracleEx\\OracleEx.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ives\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Users\\ives\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0\\microsoft.entityframeworkcore.abstractions.6.0.0.nupkg.sha512",
