@@ -1,4 +1,4 @@
-﻿using DBCheck.ViewModel;
+using DBCheck.ViewModel;
 using OracleEx;
 using OracleEx.Ex;
 using OracleEx.Model;
@@ -62,8 +62,18 @@ namespace OracleGenerate
                 Calc();
             });
         }
+        private void btnCheckNotExist_Click(object sender, RoutedEventArgs e)
+        {
+            ClearMsg();
+            SetMsg("计算中...");
 
-        private async Task Calc()
+            Task.Run(() =>
+            {
+                Calc(false);
+            });
+        }
+
+        private async Task Calc(bool exist=true)
         {
             //获取所有表
             List<string> tableNames = new();
@@ -95,7 +105,7 @@ namespace OracleGenerate
 
 
             //表字段
-            var existTables = context.UserTabColumns.Where(f => tableNames.Contains(f.TableName) && f.ColumnName == model.CheckFieldName).Select(f => f.TableName);
+            var existTables = context.UserTabColumns.Where(f => tableNames.Contains(f.TableName) && (exist ? f.ColumnName == model.CheckFieldName : f.ColumnName != model.CheckFieldName)).Select(f => f.TableName);
 
             this.Dispatcher.Invoke(() =>
             {
