@@ -28,9 +28,10 @@
 
                 <Button Content="存在此字段的表" Height="50" Name="btnCheck" Click="btnCheck_Click"/>
                 <Button Content="不存在此字段的表" Height="50" Name="btnCheckNotExist" Click="btnCheckNotExist_Click"/>
+                <Button Content="导出结果" Height="50" Name="btnExport" Click="btnExport_Click"/>
                 <Label Name="txtMsg" Foreground="Red"/>
                 
-                <TextBlock Text="单击复制" FontSize="15" Margin="5" Foreground="Red"/>
+                <TextBlock Text="单击复制指定行" FontSize="15" Margin="5" Foreground="Red"/>
             </StackPanel>
             
             <ScrollViewer VerticalScrollBarVisibility="Auto"  Margin="5">

@@ -1,13 +1,10 @@
 using DBCheck.ViewModel;
+using Microsoft.Win32;
 using OracleEx;
-using OracleEx.Ex;
-using OracleEx.Model;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -73,7 +70,7 @@ namespace OracleGenerate
             });
         }
 
-        private async Task Calc(bool exist=true)
+        private async Task Calc(bool exist = true)
         {
             //获取所有表
             List<string> tableNames = new();
@@ -90,7 +87,7 @@ namespace OracleGenerate
                 tableNames = context.UserTables.Where(f => f.TableName.Contains(model.CheckTableName.ToUpper()))?.Select(f => f.TableName).ToList();
             }
 
-            if(tableNames==null|| tableNames.Count == 0)
+            if (tableNames == null || tableNames.Count == 0)
             {
                 this.Dispatcher.Invoke(() =>
                 {
@@ -134,6 +131,32 @@ namespace OracleGenerate
                     SetMsg("无法获取剪贴板权限");
                 }
             }
+        }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(model.ResultTableList?.Any() ?? false))
+            {
+                return;
+            }
+            var dialog = new SaveFileDialog();
+            var dialogResult = dialog.ShowDialog();
+            if (dialogResult != true)
+            {
+                return;
+            }
+
+            var file = new FileInfo(dialog.FileName);
+            if (File.Exists(dialog.FileName))
+            {
+                File.Delete(file.FullName);
+            }
+            foreach (var item in model.ResultTableList)
+            {
+                File.AppendAllText(file.FullName, item + "\r\n");
+            }
+
+            SetMsg("导出完成");
         }
     }
 }
